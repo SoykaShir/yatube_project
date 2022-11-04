@@ -26,6 +26,7 @@ SECRET_KEY = 'c79h0d24&vr!x+bl_#zi3wy(4idgcgj4b=*9x_r0bkm@jt26@5'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'posts.apps.PostsConfig'
 ]
 
 MIDDLEWARE = [
@@ -50,11 +52,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'yatube.urls'
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

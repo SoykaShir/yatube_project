@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Записи сообщества {{ group.title }} {% endblock title %}
+{% block content %}
+      <!-- класс py-5 создает отступы сверху и снизу блока -->
+        <h1>{{ title }}</h1>
+        <p>
+          {{ group }}
+        </p>
+        {% for post in posts%}
+        <article>
+          <ul>
+            <li>
+              Автор: {{ post.author }}
+            </li>
+            <li>
+              Дата публикации: {{ post.pub_date }}
+            </li>
+          </ul>      
+          <p>
+              {{ post.text|safe }}
+          </p>
+        </article>
+      {% if not forloop.last %}
+        <hr>
+      {% endif %}
+                  {% endfor %}
+        <!-- под последним постом нет линии -->
+{% endblock %}
