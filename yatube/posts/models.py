@@ -5,7 +5,7 @@ User = get_user_model()
 
 
 class Group(models.Model):
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
     title = models.CharField(max_length=200)

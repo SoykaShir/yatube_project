@@ -2,9 +2,9 @@ from django.urls import path
 
 from . import views
 
-app_name = 'posts'
+app_name: str = 'posts'
 
-urlpatterns = [
+urlpatterns: list[tuple] = [
     path('', views.index, name='index'),
     path('group/<slug:slug>/', views.group_posts, name='group_list')
 ]
